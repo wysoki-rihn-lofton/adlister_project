@@ -46,6 +46,7 @@ CREATE TABLE ads (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
   title VARCHAR(100),
   description VARCHAR(500),
+  cost FLOAT NOT NULL,
   profile_id INT UNSIGNED NOT NULL,
   pet_id INT UNSIGNED NOT NULL,
   phone VARCHAR (20),

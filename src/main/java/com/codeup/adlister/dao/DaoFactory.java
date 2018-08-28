@@ -3,6 +3,7 @@ package com.codeup.adlister.dao;
 public class DaoFactory {
     private static Ads adsDao;
     private static Users usersDao;
+    private static Pets petsDao;
     private static Config config = new Config();
 
     public static Ads getAdsDao() {
@@ -17,5 +18,12 @@ public class DaoFactory {
             usersDao = new MySQLUsersDao(config);
         }
         return usersDao;
+    }
+
+    public static Pets getPetsDao() {
+        if (petsDao == null) {
+            petsDao = new MySQLPetsDao(config);
+        }
+        return petsDao;
     }
 }
