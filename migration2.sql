@@ -15,22 +15,21 @@ CREATE TABLE users (
   username varchar(50) not null ,
   email VARCHAR(50) NOT NULL,
   password VARCHAR(255) NOT NULL,
-  UNIQUE (email),
+  location VARCHAR(100),
+  UNIQUE (email, username),
   PRIMARY KEY (id)
 );
 
-CREATE TABLE profiles (
-  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  first_Name VARCHAR(100),
-  last_Name VARCHAR(100),
-  username VARCHAR (100),
-  location VARCHAR(100),
-  phone VARCHAR (20),
-  user_id INT UNSIGNED NOT NULL,
-  PRIMARY KEY (id),
-  FOREIGN KEY (user_id) REFERENCES users(id)
-    ON DELETE CASCADE
-);
+# CREATE TABLE profiles (
+#   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+#
+#   username VARCHAR (100),
+#
+#   user_id INT UNSIGNED NOT NULL,
+#   PRIMARY KEY (id),
+#   FOREIGN KEY (user_id) REFERENCES users(id)
+#     ON DELETE CASCADE
+# );
 
 CREATE TABLE pets (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -46,6 +45,7 @@ CREATE TABLE ads (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
   title VARCHAR(100),
   description VARCHAR(500),
+  cost FLOAT NOT NULL,
   profile_id INT UNSIGNED NOT NULL,
   pet_id INT UNSIGNED NOT NULL,
   phone VARCHAR (20),

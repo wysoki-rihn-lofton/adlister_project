@@ -7,6 +7,7 @@
 </head>
 <body>
     <jsp:include page="partials/navbar.jsp" />
+
     <div class="container">
         <h1>Please fill in your information.</h1>
         <form action="/register" method="post">
@@ -25,6 +26,10 @@
             <div class="form-group">
                 <label for="confirm_password">Confirm Password</label>
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password">
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input id="location" name="location" class="form-control" type="text">
             </div>
             <input type="submit" class="btn btn-primary btn-block">
         </form>

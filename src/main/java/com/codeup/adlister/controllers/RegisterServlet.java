@@ -13,7 +13,15 @@ import java.io.IOException;
 @WebServlet(name = "controllers.RegisterServlet", urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
+        // if logged, redirect to the profile page
+
+
+        if(request.getSession().getAttribute("user")==null){
+            request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
+        }else{
+            response.sendRedirect("/profile");
+        }
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -21,12 +29,15 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
+        String location = request.getParameter("location");
+
 
         // validate input
         boolean inputHasErrors = username.isEmpty()
-            || email.isEmpty()
-            || password.isEmpty()
-            || (! password.equals(passwordConfirmation));
+                || email.isEmpty()
+                || password.isEmpty()
+                || location.isEmpty()
+                || (! password.equals(passwordConfirmation));
 
         if (inputHasErrors) {
             response.sendRedirect("/register");
@@ -34,8 +45,12 @@ public class RegisterServlet extends HttpServlet {
         }
 
         // create and save a new user
-        User user = new User(username, email, password);
+        User user = new User();
+        user.setPassword(password);
+        user.setUsername(username);
+        user.setEmail(email);
+        user.setLocation(location);
         DaoFactory.getUsersDao().insert(user);
-        response.sendRedirect("/login");
+        response.sendRedirect("/profile");
     }
 }
