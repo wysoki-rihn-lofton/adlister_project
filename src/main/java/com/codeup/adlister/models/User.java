@@ -2,11 +2,17 @@ package com.codeup.adlister.models;
 
 import com.codeup.adlister.util.Password;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private long id;
     private String username;
     private String email;
     private String password;
+    private String location;
+
+
+
 
     public User() {}
 
@@ -16,11 +22,20 @@ public class User {
         setPassword(password);
     }
 
-    public User(long id, String username, String email, String password) {
+    public User(long id, String username, String email, String password, String location) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
+        this.location = location;
+
+    }
+    public User(String username, String email, String password, String location){
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.location = location;
+
     }
 
     public long getId() {
@@ -54,4 +69,11 @@ public class User {
     public void setPassword(String password) {
         this.password = Password.hash(password);
     }
+
+    public String getLocation() { return location; }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
 }
