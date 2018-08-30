@@ -2,6 +2,7 @@
     <div class="container-fluid">
 
 
+
         <div class="collapse navbar-collapse" id="mainNav">
 
             <div class="navbar-nav">
@@ -15,6 +16,12 @@
 
 
             </div>
+
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/ads">Adlister</a>
+            <a class="navbar-brand" href="/petads">PETADS</a>
 
         </div>
 
