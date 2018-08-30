@@ -15,5 +15,7 @@ public class Config {
     public String getPassword(){
         return password;
     }
+//Jillian added getUser
+    public String getUser() { return user;}
 
 }

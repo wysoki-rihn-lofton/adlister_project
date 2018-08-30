@@ -9,6 +9,14 @@ import java.util.List;
 public class MySQLPetsDao implements Pets {
     private Connection connection;
 
+//Jillian added private User user;
+//    private User user;
+//    public MySQLPetsDao(Connection connection, User user) {
+//        this.connection = connection;
+//        this.user = user;
+//    }
+
+
     public MySQLPetsDao(Config config) {
         try {
             DriverManager.registerDriver(new Driver());
@@ -35,13 +43,18 @@ public class MySQLPetsDao implements Pets {
     }
 
     @Override
+    public Long insert(Pets pet) {
+        return null;
+    }
+
+    @Override
     public Long insert(Pet pet) {
         String query = "INSERT INTO pets(pet, email, password) VALUES (?, ?, ?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-            stmt.setString(1, user.getPet());
-            stmt.setString(2, user.getEmail());
-            stmt.setString(3, user.getPassword());
+//            stmt.setString(1, user.getPet());
+//            stmt.setString(2, user.getEmail());
+//            stmt.setString(3, user.getPassword());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();

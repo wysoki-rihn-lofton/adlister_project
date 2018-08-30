@@ -4,6 +4,7 @@ public class Pet {
     private long id;
     private long userId;
     private String title;
+    private String user;
     private String description;
 
     public Pet(long id, long userId, String title, String description) {
@@ -16,6 +17,8 @@ public class Pet {
     public Pet(long userId, String user, String title, String description) {
         this.userId = userId;
         this.title = title;
+// Jillian added "this.user = user;"
+        this.user = user;
         this.description = description;
     }
 
@@ -31,8 +34,18 @@ public class Pet {
         return userId;
     }
 
+
     public void setUserId(long userId) {
         this.userId = userId;
+    }
+
+// Jillian added lines 43-45
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 
     public String getTitle() {

@@ -1,3 +1,4 @@
+import com.codeup.adlister.dao.Pets;
 import com.codeup.adlister.models.Pet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

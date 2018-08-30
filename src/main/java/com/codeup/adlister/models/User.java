@@ -38,6 +38,8 @@ public class User implements Serializable {
 
     }
 
+//    we need a getPet here, that is why it cant be accessed. Public User(above) has to pull in Pet. MySqLPetsDAO is trying to access all these methods that are not connected to the objects. THe methods below has to match here, in the MySQLPetsDAO and in the Pet.java(pet singular)
+
     public long getId() {
         return id;
     }
@@ -49,8 +51,6 @@ public class User implements Serializable {
     public String getUsername() {
         return username;
     }
-
-
 
     public void setUsername(String username) {
         this.username = username;
