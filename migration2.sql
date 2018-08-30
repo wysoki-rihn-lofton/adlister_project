@@ -32,44 +32,50 @@ CREATE TABLE profiles (
     ON DELETE CASCADE
 );
 
-CREATE TABLE pets (
-  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  Name VARCHAR(100),
-  Type VARCHAR(100),
-  Breed VARCHAR (100),
-  Gender VARCHAR(100),
-  Age VARCHAR (20),
-  PRIMARY KEY (id)
-);
+# CREATE TABLE pets (
+#   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+#   name VARCHAR(100),
+#   type VARCHAR(100),
+#   breed VARCHAR (100),
+#   gender VARCHAR(100),
+#   age INT (20),
+#   PRIMARY KEY (id)
+# );
 
 CREATE TABLE ads (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
   title VARCHAR(100),
   description VARCHAR(500),
   cost FLOAT NOT NULL,
-  profile_id INT UNSIGNED NOT NULL,
-  pet_id INT UNSIGNED NOT NULL,
-  phone VARCHAR (20),
+  username VARCHAR(50) NOT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (profile_id) REFERENCES profiles(id),
-  FOREIGN KEY (pet_id) REFERENCES pets(id)
+  FOREIGN KEY (id) REFERENCES users(id),
+  FOREIGN KEY (id) REFERENCES pets(id)
 );
 
+# CREATE TABLE traits (
+#   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+#   name VARCHAR(100),
+#   type VARCHAR(100),
+#   breed VARCHAR (100),
+#   gender VARCHAR(100),
+#   age INT (20),
+#   Trait VARCHAR(100),
+#   PRIMARY KEY (id),
+#   FOREIGN KEY (traits_id) REFERENCES ads(id)
+# );
 
-
-CREATE TABLE traits (
+CREATE TABLE pets (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  Trait VARCHAR(100),
+  name VARCHAR(100),
+  type VARCHAR(100),
+  breed VARCHAR (100),
+  gender VARCHAR(100),
+  age INT (20),
   PRIMARY KEY (id)
 );
 
-CREATE TABLE pet_traits (
-  pet_id INT UNSIGNED NOT NULL,
-  trait_id INT UNSIGNED NOT NULL,
-  FOREIGN KEY (pet_id) REFERENCES pets(id),
-  FOREIGN KEY (trait_id) REFERENCES traits(id)
-);
+# INSERT INTO traits(Trait)
+#     VALUES ("Agressive"),("Loving"),("Friendly")
 
-INSERT INTO traits(Trait)
-    VALUES ("Agressive"),("Loving"),("Friendly")
-
+SELECT * FROM ads
