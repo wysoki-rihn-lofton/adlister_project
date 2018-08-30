@@ -3,10 +3,7 @@ CREATE DATABASE petlister_db;
 USE petlister_db;
 
 DROP table if exists ads;
-DROP table if exists profiles;
-DROP table if exists pet_traits;
 DROP table if exists pets;
-DROP table if exists traits;
 DROP table if exists users;
 
 
@@ -20,26 +17,6 @@ CREATE TABLE users (
   PRIMARY KEY (id)
 );
 
-# CREATE TABLE profiles (
-#   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-#
-#   username VARCHAR (100),
-#
-#   user_id INT UNSIGNED NOT NULL,
-#   PRIMARY KEY (id),
-#   FOREIGN KEY (user_id) REFERENCES users(id)
-#     ON DELETE CASCADE
-# );
-
-# CREATE TABLE pets (
-#   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-#   name VARCHAR(100),
-#   type VARCHAR(100),
-#   breed VARCHAR (100),
-#   gender VARCHAR(100),
-#   age INT (20),
-#   PRIMARY KEY (id)
-# );
 
 CREATE TABLE ads (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -48,21 +25,8 @@ CREATE TABLE ads (
   cost FLOAT NOT NULL,
   username VARCHAR(50) NOT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (id) REFERENCES users(id),
-  FOREIGN KEY (id) REFERENCES pets(id)
+  FOREIGN KEY (id) REFERENCES users(id)
 );
-
-# CREATE TABLE traits (
-#   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-#   name VARCHAR(100),
-#   type VARCHAR(100),
-#   breed VARCHAR (100),
-#   gender VARCHAR(100),
-#   age INT (20),
-#   Trait VARCHAR(100),
-#   PRIMARY KEY (id),
-#   FOREIGN KEY (traits_id) REFERENCES ads(id)
-# );
 
 CREATE TABLE pets (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -71,10 +35,8 @@ CREATE TABLE pets (
   breed VARCHAR (100),
   gender VARCHAR(100),
   age INT (20),
-  PRIMARY KEY (id)
+  PRIMARY KEY (id),
+  FOREIGN KEY (id) REFERENCES ads(id)
 );
-
-# INSERT INTO traits(Trait)
-#     VALUES ("Agressive"),("Loving"),("Friendly")
 
 SELECT * FROM ads
