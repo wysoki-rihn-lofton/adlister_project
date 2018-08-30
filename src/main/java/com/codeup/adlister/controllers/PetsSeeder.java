@@ -75,4 +75,3 @@ public class PetsSeeder implements Pet {
         seedPosts(users);
         log.info("Finished running seeders!");
     }
-}
