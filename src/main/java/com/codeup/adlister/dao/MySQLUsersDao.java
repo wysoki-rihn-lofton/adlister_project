@@ -13,9 +13,9 @@ public class MySQLUsersDao implements Users {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
 
-                    config.getUrl(),
-                    config.getUsername(),
-                    config.getPassword()
+                config.getUrl(),
+                config.getUsername(),
+                config.getPassword()
 
             );
         } catch (SQLException e) {

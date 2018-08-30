@@ -12,24 +12,40 @@
     <h1>Please fill in your Ad.</h1>
     <form action="/petads" method="post">
         <div class="form-group">
+            <label for="title">Title Of Ad</label>
+            <input id="title" name="title" class="form-control" type="text"required>
+        </div>
+        <div class="form-group">
             <label for="name">Name Of Pet</label>
-            <input id="name" name="name" class="form-control" type="text">
+            <input id="name" name="name" class="form-control" type="text"required>
         </div>
         <div class="form-group">
             <label for="type">Type of Pet</label>
-            <input  id="type" name="type" class="form-control" type="text">
+            <input  id="type" name="type" class="form-control" type="text"required>
         </div>
         <div class="form-group">
             <label for="breed">Breed Of Pet</label>
-            <input id="breed" name="breed" class="form-control" type="text">
+            <input id="breed" name="breed" class="form-control" type="text"required>
         </div>
         <div class="form-group">
             <label for="gender">Gender Of Pet</label>
-            <input id="gender" name="gender" class="form-control" type="text">
+            <input id="gender" name="gender" class="form-control" type="text"required>
         </div>
         <div class="form-group">
             <label for="age">Age Of Pet</label>
-            <input id="age" name="age" class="form-control" type="number">
+            <input id="age" name="age" class="form-control" type="number"required>
+        </div>
+        <div class="form-group">
+        <label for="descrip">Description Of Pet</label>
+        <input id="descrip" name="descrip" class="form-control" type="text"required>
+        </div>
+        <div class="form-group">
+            <label for="cost">Cost Of Pet</label>
+            <input id="cost" name="cost" class="form-control" type="number"required>
+        </div>
+        <div class="form-group">
+            <label for="traits">Traits Of Pet</label>
+            <input id="traits" name="traits" class="form-control" type="text"required>
         </div>
         <input type="submit" class="btn btn-primary btn-block">
     </form>
