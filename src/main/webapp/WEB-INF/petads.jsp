@@ -5,11 +5,12 @@
         <jsp:param name="title" value="Place A Ad" />
     </jsp:include>
 </head>
+
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <div class="container">
     <h1>Please fill in your Ad.</h1>
-    <form action="/petAds" method="post">
+    <form action="/petads" method="post">
         <div class="form-group">
             <label for="name">Name Of Pet</label>
             <input id="name" name="name" class="form-control" type="text">

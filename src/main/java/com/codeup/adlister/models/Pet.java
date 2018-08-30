@@ -2,22 +2,29 @@ package com.codeup.adlister.models;
 
 public class Pet {
     private long id;
-    private long userId;
-    private String title;
-    private String description;
+    private String name;
+    private String type;
+    private String breed;
+    private String gender;
+    private int age;
 
-    public Pet(long id, long userId, String title, String description) {
+    public Pet(long id, String name, String type, String breed, String gender, String age) {
         this.id = id;
-        this.userId = userId;
-        this.title = title;
-        this.description = description;
+        this.name = name;
+        this.type = type;
+        this.breed = breed;
+        this.gender = gender;
+        this.age = Integer.parseInt(age);
     }
 
-    public Pet(long userId, String user, String title, String description) {
-        this.userId = userId;
-        this.title = title;
-        this.description = description;
+    public Pet(String name, String type, String breed, String gender, String age) {
+        this.name = name;
+        this.type = type;
+        this.breed = breed;
+        this.gender = gender;
+        this.age = Integer.parseInt(age);
     }
+
 
     public long getId() {
         return id;
@@ -27,27 +34,45 @@ public class Pet {
         this.id = id;
     }
 
-    public long getUserId() {
-        return userId;
+    public String getName() {
+        return name;
     }
 
-    public void setUserId(long userId) {
-        this.userId = userId;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getTitle() {
-        return title;
+    public String getType() {
+        return type;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getDescription() {
-        return description;
+    public String getBreed() {
+        return breed;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
+
+

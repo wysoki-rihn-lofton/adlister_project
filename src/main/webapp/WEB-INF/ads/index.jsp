@@ -12,10 +12,19 @@
 <div class="container">
     <h1>Here Are all the ads!</h1>
 
-    <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
+    <%--<c:forEach var="ad" items="${ads}">--%>
+        <%--<div class="col-md-6">--%>
+            <%--<h2>${ad.title}</h2>--%>
+            <%--<p>${ad.description}</p>--%>
+        <%--</div>--%>
+    <%--</c:forEach>--%>
+    <c:forEach var="pet" items="${pets}">
+        <div class="col-md-4">
+            <h2>${pet.name}</h2>
+            <p>${pet.age}</p>
+            <p>${pet.gender}</p>
+            <p>${pet.breed}</p>
+            <p>${pet.type}</p>
         </div>
     </c:forEach>
 </div>
