@@ -7,22 +7,35 @@ public class Pet {
     private String breed;
     private String gender;
     private int age;
+    private String descrip;
+    private Float cost;
+    private String title;
+    private String traits;
 
-    public Pet(long id, String name, String type, String breed, String gender, String age) {
+
+    public Pet(long id, String name, String type, String breed, String gender, String age, String descrip, String cost, String title, String traits) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.breed = breed;
         this.gender = gender;
         this.age = Integer.parseInt(age);
+        this.descrip = descrip;
+        this.cost = Float.parseFloat(cost);
+        this.title = title;
+        this.traits = traits;
     }
 
-    public Pet(String name, String type, String breed, String gender, String age) {
+    public Pet(String name, String type, String breed, String gender, String age, String descrip, String cost, String title, String traits) {
         this.name = name;
         this.type = type;
         this.breed = breed;
         this.gender = gender;
         this.age = Integer.parseInt(age);
+        this.descrip = descrip;
+        this.cost = Float.parseFloat(cost);
+        this.title = title;
+        this.traits = traits;
     }
 
 
@@ -72,6 +85,38 @@ public class Pet {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getDescrip() {
+        return descrip;
+    }
+
+    public void setDescrip(String desc) {
+        this.descrip = desc;
+    }
+
+    public Float getCost() {
+        return cost;
+    }
+
+    public void setCost(Float cost) {
+        this.cost = cost;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getTraits() {
+        return traits;
+    }
+
+    public void setTraits(String traits) {
+        this.traits = traits;
     }
 }
 

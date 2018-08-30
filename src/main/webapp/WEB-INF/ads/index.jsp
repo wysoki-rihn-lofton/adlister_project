@@ -18,13 +18,16 @@
             <%--<p>${ad.description}</p>--%>
         <%--</div>--%>
     <%--</c:forEach>--%>
-    <c:forEach var="pet" items="${pets}">
+    <c:forEach var="pet" items="${pets_ad}">
         <div class="col-md-4">
             <h2>${pet.name}</h2>
             <p>${pet.age}</p>
             <p>${pet.gender}</p>
             <p>${pet.breed}</p>
-            <p>${pet.type}</p>
+            <p>${pet.descrip}</p>
+            <p>${pet.cost}</p>
+            <p>${pet.title}</p>
+            <p>${pet.traits}</p>
         </div>
     </c:forEach>
 </div>
