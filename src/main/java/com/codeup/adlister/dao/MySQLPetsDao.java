@@ -61,7 +61,7 @@ public List<Pet> all() {
 //            System.out.println(pet.getType());
 //            System.out.println(pet.getBreed());
 //            System.out.println(pet.getGender());
-            System.out.println(pet.getAge());
+
             stmt.setString(1, pet.getName());
             stmt.setString(2, pet.getType());
             stmt.setString(3, pet.getBreed());
@@ -116,6 +116,17 @@ public List<Pet> all() {
         }
 
 
+    }
+    @Override
+    public void deleteAd(Long id) {
+        String sql = "DELETE FROM pets WHERE id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setLong(1, id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving your ads.", e);
+        }
     }
 
 

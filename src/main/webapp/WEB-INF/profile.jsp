@@ -23,6 +23,12 @@
             <div><p>Pet's traits: ${pet.traits}</p></div>
             <div><p>Type of animal: ${pet.type}</p></div>
         </div>
+        <form method="post" action="/delete" >
+            <input type="hidden" name="id" value="${pet.id}">
+            <button type="submit" class="btn btn-primary">
+                Delete
+            </button>
+        </form>
     </c:forEach>
 
 </body>
