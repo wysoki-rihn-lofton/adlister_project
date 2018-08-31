@@ -1,9 +1,13 @@
 package com.codeup.adlister.dao;
 
+import com.codeup.adlister.models.Pet;
 import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
+import java.util.List;
+import java.util.ArrayList;
+
 
 public class MySQLUsersDao implements Users {
     private Connection connection;
@@ -13,9 +17,9 @@ public class MySQLUsersDao implements Users {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
 
-                config.getUrl(),
-                config.getUsername(),
-                config.getPassword()
+                    config.getUrl(),
+                    config.getUsername(),
+                    config.getPassword()
 
             );
         } catch (SQLException e) {
@@ -55,7 +59,7 @@ public class MySQLUsersDao implements Users {
     }
 
     private User extractUser(ResultSet rs) throws SQLException {
-        if (! rs.next()) {
+        if (!rs.next()) {
             return null;
         }
         return new User(
@@ -67,5 +71,4 @@ public class MySQLUsersDao implements Users {
 
         );
     }
-
 }

@@ -45,7 +45,7 @@ public class MySQLPetsDao implements Pets {
 public List<Pet> all() {
     PreparedStatement stmt = null;
     try {
-        stmt = connection.prepareStatement("SELECT * FROM pets_ad");
+        stmt = connection.prepareStatement("SELECT * FROM pets");
         ResultSet rs = stmt.executeQuery();
         return createPetsFromResults(rs);
     } catch (SQLException e) {
@@ -54,7 +54,7 @@ public List<Pet> all() {
 }
     @Override
     public Long insert(Pet pet) {
-        String query = "INSERT INTO pets_ad(name, type, breed, gender, age, descrip, cost, title, traits) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO pets(name, type, breed, gender, age, description, cost, title, traits, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 //            System.out.println(pet.getName());
@@ -67,10 +67,11 @@ public List<Pet> all() {
             stmt.setString(3, pet.getBreed());
             stmt.setString(4, pet.getGender());
             stmt.setInt(5, pet.getAge());
-            stmt.setString(6, pet.getDescrip());
+            stmt.setString(6, pet.getDescription());
             stmt.setFloat(7, pet.getCost());
             stmt.setString(8, pet.getTitle());
             stmt.setString(9, pet.getTraits());
+            stmt.setLong(10, pet.getUser_id());
 
 
             stmt.executeUpdate();
@@ -82,7 +83,7 @@ public List<Pet> all() {
         }
     }
 
-    private Pet extractPet(ResultSet rs) throws SQLException {
+    public Pet extractPet(ResultSet rs) throws SQLException {
         return new Pet(
                 rs.getLong("id"),
                 rs.getString("name"),
@@ -90,7 +91,7 @@ public List<Pet> all() {
                 rs.getString("breed"),
                 rs.getString("gender"),
                 rs.getString("age"),
-                rs.getString("descrip"),
+                rs.getString("description"),
                 rs.getString("cost"),
                 rs.getString("title"),
                 rs.getString("traits")
@@ -102,6 +103,19 @@ public List<Pet> all() {
             pets.add(extractPet(rs));
         }
         return pets;
+    }
+    public List<Pet> findPetsByUser(Long id) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM pets WHERE user_id = ?");
+            stmt.setLong(1, id);
+            ResultSet rs = stmt.executeQuery();
+            return createPetsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+
+
     }
 
 

@@ -12,7 +12,7 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <div class="form-container container">
     <h1>Please fill in your Ad.</h1>
-    <form action="/petads" method="post">
+    <form action="ads/index.jsp" method="post">
         <div class="form-group">
             <label for="title">Title Of Ad</label>
             <input id="title" name="title" class="form-control" type="text"required>
@@ -38,8 +38,8 @@
             <input id="age" name="age" class="form-control" type="number"required>
         </div>
         <div class="form-group">
-        <label for="descrip">Description Of Pet</label>
-        <input id="descrip" name="descrip" class="form-control" type="text"required>
+        <label for="description">Description Of Pet</label>
+        <input id="description" name="description" class="form-control" type="text"required>
         </div>
         <div class="form-group">
             <label for="cost">Cost Of Pet</label>
