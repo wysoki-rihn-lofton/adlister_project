@@ -13,23 +13,15 @@
         <h1>Welcome, ${sessionScope.user.username}!</h1>
     </div>
     <c:forEach var="pet" items="${pets}">
-        <div class="card mx-auto my-5 w-75">
-            <div class="card-header">
-                <h2>${pet.title}</h2>
-            </div>
-            <div class="card-body">
-                <p class="card-text">${pet.description}</p>
-            </div>
-            <%--<div class="card-footer text-muted">--%>
-                <%--<a href="/ads/edit?id=${ad.id}&oldTitle=${ad.title}&oldDescription=${ad.description}" class="btn btn-primary">--%>
-                    <%--Edit--%>
-                <%--</a>--%>
-                <%--<form method="post" action="/ads/delete" >--%>
-                    <%--<button type="submit" name="id" value="${ad.id}" class="btn btn-primary">--%>
-                        <%--Delete--%>
-                    <%--</button>--%>
-                <%--</form>--%>
-            <%--</div>--%>
+        <div class="card">
+            <div class="card-header"><h3>${pet.title}</h3></div>
+            <div><p>Description: ${pet.description}</p></div>
+            <div><p>Pet's name: ${pet.name}</p></div>
+            <div><p>Cost: $${pet.cost}</p></div>
+            <div><p>Pet's gender: ${pet.gender}</p></div>
+            <div><p>Pet's age: ${pet.age}</p></div>
+            <div><p>Pet's traits: ${pet.traits}</p></div>
+            <div><p>Type of animal: ${pet.type}</p></div>
         </div>
     </c:forEach>
 
