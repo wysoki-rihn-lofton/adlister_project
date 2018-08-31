@@ -4,11 +4,13 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Place A Ad" />
     </jsp:include>
+    <link rel="stylesheet" href="../style.css">
+
 </head>
 
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<div class="container">
+<div class="form-container container">
     <h1>Please fill in your Ad.</h1>
     <form action="/petads" method="post">
         <div class="form-group">
@@ -49,6 +51,9 @@
         </div>
         <input type="submit" class="btn btn-primary btn-block">
     </form>
+
 </div>
+<jsp:include page="/WEB-INF/partials/footer.jsp"/>
+
 </body>
 </html>
