@@ -14,6 +14,6 @@ public class AdsIndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        request.setAttribute("ads", DaoFactory.getAdsDao().all());
         request.setAttribute("pets", DaoFactory.getPetsDao().all());
-        request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/ads/index.jsp").forward(request, response);
     }
 }

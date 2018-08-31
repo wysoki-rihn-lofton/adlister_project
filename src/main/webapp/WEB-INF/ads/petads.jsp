@@ -4,7 +4,7 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Place A Ad" />
     </jsp:include>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../style.css">
 
 </head>
 
@@ -12,7 +12,7 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <div class="form-container container">
     <h1>Please fill in your Ad.</h1>
-    <form action="ads/index.jsp" method="post">
+    <form action="/create" method="post">
         <div class="form-group">
             <label for="title">Title Of Ad</label>
             <input id="title" name="title" class="form-control" type="text"required>

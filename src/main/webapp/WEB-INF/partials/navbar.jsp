@@ -11,6 +11,7 @@
                 <a class="navbar-brand" href="/index">All Ads</a>
                 <a class="navbar-brand" href="/register">Register</a>
                 <a class="navbar-brand" href="/profile">View Profile</a>
+                <a class="navbar-brand" href="/create">Create Ad</a>
             </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/login">Login</a></li>

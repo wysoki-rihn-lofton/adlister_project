@@ -18,7 +18,7 @@ public class PetAdsServlet extends HttpServlet {
         if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/login");
             return;
-        }request.getRequestDispatcher("/WEB-INF/petads.jsp").forward(request, response);
+        }request.getRequestDispatcher("/WEB-INF/ads/petads.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
