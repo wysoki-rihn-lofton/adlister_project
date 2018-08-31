@@ -12,5 +12,6 @@ public interface Pets {
     List<Pet>findPetsByUser(Long id);
     // insert a new ad and return the new ad's id
     Long insert(Pet pet);
+    void deleteAd(Long id);
 }
 
