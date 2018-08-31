@@ -4,6 +4,7 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Place A Ad" />
     </jsp:include>
+
     <link rel="stylesheet" href="../../style.css">
 
 </head>
