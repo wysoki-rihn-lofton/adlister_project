@@ -49,7 +49,7 @@ CREATE TABLE pets_ad (
   traits VARCHAR(50) NOT NULL,
   user_id INT UNSIGNED,
   PRIMARY KEY (id),
-  FOREIGN KEY (user_id) REFERENCES users(id)
+  FOREIGN KEY (id) REFERENCES users(id)
 );
 
 # INSERT INTO traits(Trait)
