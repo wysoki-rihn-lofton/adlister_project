@@ -11,10 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "controllers.PetAdsServlet", urlPatterns = "/petads")
+@WebServlet(name = "controllers.PetAdsServlet", urlPatterns = "/create")
 public class PetAdsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/petads.jsp").forward(request, response);
+
+        if (request.getSession().getAttribute("user") == null) {
+            response.sendRedirect("/login");
+            return;
+        }request.getRequestDispatcher("/WEB-INF/petads.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -24,10 +28,11 @@ public class PetAdsServlet extends HttpServlet {
         String breed = request.getParameter("breed");
         String gender = request.getParameter("gender");
         String age = request.getParameter("age");
-        String descrip = request.getParameter("descrip");
+        String description = request.getParameter("description");
         String cost = request.getParameter("cost");
         String title = request.getParameter("title");
         String traits = request.getParameter("traits");
+        User user = (User) request.getSession().getAttribute("user");
 
         // validate input
         boolean inputHasErrors = name.isEmpty()
@@ -35,13 +40,13 @@ public class PetAdsServlet extends HttpServlet {
                 || breed.isEmpty()
                 || gender.isEmpty()
                 || age.isEmpty()
-                || descrip.isEmpty()
+                || description.isEmpty()
                 || cost.isEmpty()
                 || title.isEmpty()
                 || traits.isEmpty();
 
         if (inputHasErrors) {
-            response.sendRedirect("/petads");
+            response.sendRedirect("/create");
             return;
         }
 
@@ -50,8 +55,9 @@ public class PetAdsServlet extends HttpServlet {
 //        DaoFactory.getPetsDao().insert(pet);
 //        response.sendRedirect("/ads");
 //        Pet pet = (Pet) request.getSession().getAttribute("name");
-        Pet pet = new Pet(name, type, breed, gender, age, descrip, cost, title, traits);
+        Pet pet = new Pet(name, type, breed, gender, age, description, cost, title, traits);
+        pet.setUser_id(user.getId());
         DaoFactory.getPetsDao().insert(pet);
-        response.sendRedirect("/ads");
+        response.sendRedirect("/index");
     }
 }

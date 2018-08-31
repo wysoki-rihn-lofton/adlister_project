@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS petlister_db;
 CREATE DATABASE petlister_db;
 USE petlister_db;
 
-DROP table if exists pets_ad;
+DROP table if exists pets;
 DROP table if exists users;
 
 
@@ -36,22 +36,23 @@ CREATE TABLE users (
 # );
 
 
-CREATE TABLE pets_ad (
+CREATE TABLE pets (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
   name VARCHAR(100),
   type VARCHAR(100),
   breed VARCHAR (100),
   gender VARCHAR(100),
   age INT (20),
-  descrip VARCHAR(500),
+  description VARCHAR(500),
   cost FLOAT NOT NULL,
   title VARCHAR(100),
   traits VARCHAR(50) NOT NULL,
   user_id INT UNSIGNED,
   PRIMARY KEY (id),
-  FOREIGN KEY (id) REFERENCES users(id)
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 # INSERT INTO traits(Trait)
 #     VALUES ("Agressive"),("Loving"),("Friendly")
 
+# SELECT id from users as A join id from pets as B on A.id = B.fk_id;

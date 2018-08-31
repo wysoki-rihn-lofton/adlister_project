@@ -7,32 +7,40 @@ public class Pet {
     private String breed;
     private String gender;
     private int age;
-    private String descrip;
+    private String description;
     private Float cost;
     private String title;
     private String traits;
+    private Long user_id;
 
+    public Long getUser_id() {
+        return user_id;
+    }
 
-    public Pet(long id, String name, String type, String breed, String gender, String age, String descrip, String cost, String title, String traits) {
+    public void setUser_id(long user_id) {
+        this.user_id = user_id;
+    }
+
+    public Pet(long id, String name, String type, String breed, String gender, String age, String description, String cost, String title, String traits) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.breed = breed;
         this.gender = gender;
         this.age = Integer.parseInt(age);
-        this.descrip = descrip;
+        this.description = description;
         this.cost = Float.parseFloat(cost);
         this.title = title;
         this.traits = traits;
     }
 
-    public Pet(String name, String type, String breed, String gender, String age, String descrip, String cost, String title, String traits) {
+    public Pet(String name, String type, String breed, String gender, String age, String description, String cost, String title, String traits) {
         this.name = name;
         this.type = type;
         this.breed = breed;
         this.gender = gender;
         this.age = Integer.parseInt(age);
-        this.descrip = descrip;
+        this.description = description;
         this.cost = Float.parseFloat(cost);
         this.title = title;
         this.traits = traits;
@@ -87,12 +95,12 @@ public class Pet {
         this.age = age;
     }
 
-    public String getDescrip() {
-        return descrip;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescrip(String desc) {
-        this.descrip = desc;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Float getCost() {
