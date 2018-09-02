@@ -5,7 +5,6 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Welcome to my site!" />
     </jsp:include>
-    <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
@@ -22,7 +21,7 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="<img src=../../img/blue macaw.jpg" alt="blue macaw">
+                <img class="d-block w-100" src="..." alt="blue macaw">
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="..." alt="Second slide">

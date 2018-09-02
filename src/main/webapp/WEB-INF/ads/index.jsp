@@ -10,26 +10,28 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 <div class="container">
-    <h1>Here Are all the ads!</h1>
+    <h1 class="text-center">Here are all the ads!</h1>
 
-    <%--<c:forEach var="ad" items="${ads}">--%>
-        <%--<div class="col-md-6">--%>
-            <%--<h2>${ad.title}</h2>--%>
-            <%--<p>${ad.description}</p>--%>
-        <%--</div>--%>
-    <%--</c:forEach>--%>
+<div class="row">
+
     <c:forEach var="pet" items="${pets}">
-        <div class="col-md-4">
-            <h2>${pet.name}</h2>
-            <p>${pet.age}</p>
-            <p>${pet.gender}</p>
-            <p>${pet.breed}</p>
-            <p>${pet.description}</p>
-            <p>${pet.cost}</p>
-            <p>${pet.title}</p>
-            <p>${pet.traits}</p>
+        <div class="col-lg-6 col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-header"><h3>${pet.title}</h3>
+                        <p class="card-text">Description: ${pet.description}</p>
+                        <p class="card-text">Name: ${pet.name}</p>
+                        <p class="card-text">Cost: $${pet.cost}</p>
+                        <p class="card-text">Gender: ${pet.gender}</p>
+                        <p class="card-text">Age: ${pet.age}</p>
+                        <p class="card-text">Traits: ${pet.traits}</p>
+                        <p class="card-text">Type: ${pet.type}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </c:forEach>
+</div>
 </div>
 <jsp:include page="/WEB-INF/partials/footer.jsp"/>
 

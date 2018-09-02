@@ -1,0 +1,46 @@
+body {
+    background: blue;
+}
+
+footer {
+    background: #99A89E;
+}
+
+/*This controls the interior space of the form, where data is entered into the text box*/
+.form-container {
+    width: 410px;
+    height: 410px;
+    padding: 20px;
+    background-color: darkred ;
+}
+/*This controls the text */
+.form {
+    height: 900px;
+    width: 500px;
+    background-color: white;
+}
+
+body {
+    background-color: lightskyblue;
+}
+
+.footer {
+    background: #061D25;
+    padding: 10px 0;
+}
+.footer a {
+    color: #70726F;
+    font-size: 20px;
+    padding: 10px;
+    border-right: 1px solid #70726F;
+    transition: all .5s ease;
+}
+.footer a:first-child {
+    border-left: 1px solid #70726F;
+}
+.footer a:hover {
+    color: white;
+}
+
+
+

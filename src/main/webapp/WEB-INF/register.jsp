@@ -4,15 +4,14 @@
     <jsp:include page="partials/head.jsp">
         <jsp:param name="title" value="Register For Our Site!" />
     </jsp:include>
-    <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
     <jsp:include page="partials/navbar.jsp" />
 
     <div class="container">
-        <h1>Please fill in your information.</h1>
-        <form action="/register" method="post">
+        <h1 class="text-center">Please fill in your information</h1>
+        <form class="form_size" action="/register" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input id="username" name="username" class="form-control" type="text">

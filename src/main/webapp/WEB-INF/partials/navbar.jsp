@@ -1,37 +1,51 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<nav class="navbar navbar-toggleable-sm bg-info">
-    <div class="container-fluid">
 
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="mainNav">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+            </li>
 
-            <div class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/index">View Ads</a>
+            </li>
 
-                <ul class="navbar-header">
-                    <!--if user logged in, only show -->
-                <c:if test="${sessionScope.user != null}">
-                    <li><a class="navbar-brand" href="/index">All Ads</a></li>
-                    <li><a class="navbar-brand" href="/profile">View Profile</a></li>
-                    <li><a class="navbar-brand" href="/create">Create Ad</a></li>
-                    <li><a href="/logout">Logout</a></li>
-                </c:if>
-                    <!--if user not logged in, only show -->
-                <c:if test="${sessionScope.user == null}">
-                    <li><a class="navbar-brand" href="/index">All Ads</a></li>
-                    <li><a class="navbar-brand" href="/register">Register</a></li>
-                    <li><a href="/login">Login</a></li>
-                </c:if>
-                </ul>
+<%--This logic shows the view profile button navbar only if user is logged in            --%>
+            <c:if test="${sessionScope.user != null}">
 
-        </div>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/profile">View Profile</a>
+                </li>
 
 
-    </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="/create">Create Ad</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            </c:if>
+
+
+            <c:if test="${sessionScope.user == null}">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
+
+            </c:if>
+
+        </ul>
+
+    </div>
 </nav>
-
-
-
-
-
