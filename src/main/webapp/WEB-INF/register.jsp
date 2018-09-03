@@ -8,7 +8,6 @@
 </head>
 <body>
     <jsp:include page="partials/navbar.jsp" />
-
     <div class="container">
         <form class="form_size" action="/register" method="post">
         <h1 class="text-center">Register</h1>
@@ -28,10 +27,10 @@
                 <label for="confirm_password">Confirm Password</label>
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password">
             </div>
-            <%--<div class="form-group">--%>
-                <%--<label for="location">Location</label>--%>
-                <%--<input id="location" name="location" class="form-control" type="text">--%>
-            <%--</div>--%>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input id="location" name="location" class="form-control" type="text">
+            </div>
             <input type="submit" class="btn btn-primary btn-block">
         </form>
     </div>

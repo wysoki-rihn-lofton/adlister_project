@@ -14,14 +14,11 @@ import java.io.IOException;
 public class RegisterServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // if logged, redirect to the profile page
-
-
         if(request.getSession().getAttribute("user")==null){
             request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
         }else{
             response.sendRedirect("/profile");
         }
-
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -31,19 +28,16 @@ public class RegisterServlet extends HttpServlet {
         String passwordConfirmation = request.getParameter("confirm_password");
         String location = request.getParameter("location");
 
-
         // validate input
         boolean inputHasErrors = username.isEmpty()
                 || email.isEmpty()
                 || password.isEmpty()
                 || location.isEmpty()
                 || (! password.equals(passwordConfirmation));
-
         if (inputHasErrors) {
             response.sendRedirect("/register");
             return;
         }
-
         // create and save a new user
         User user = new User();
         user.setPassword(password);

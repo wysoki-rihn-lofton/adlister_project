@@ -13,35 +13,33 @@
     <div class="container">
         <h1 class="text-center">Welcome, ${sessionScope.user.username}!</h1>
         <div class="row">
-    <c:forEach var="pet" items="${pets}">
-
+        <c:forEach var="pet" items="${pets}">
             <div class="col-lg-6 col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-header"><h3><strong>${pet.title}</strong></h3>
+                            <p class="card-text">Description: ${pet.description}</p>
+                            <p class="card-text">Name: ${pet.name}</p>
+                            <p class="card-text">Cost: $${pet.cost}</p>
+                            <p class="card-text">Gender: ${pet.gender}</p>
+                            <p class="card-text">Age: ${pet.age}</p>
+                            <p class="card-text">Traits: ${pet.traits}</p>
+                            <p class="card-text">Type: ${pet.type}</p>
 
-
-        <div class="card">
-            <div class="card-body">
-                <div class="card-header"><h3><strong>${pet.title}</strong></h3>
-            <p class="card-text">Description: ${pet.description}</p>
-            <p class="card-text">Name: ${pet.name}</p>
-            <p class="card-text">Cost: $${pet.cost}</p>
-            <p class="card-text">Gender: ${pet.gender}</p>
-            <p class="card-text">Age: ${pet.age}</p>
-            <p class="card-text">Traits: ${pet.traits}</p>
-            <p class="card-text">Type: ${pet.type}</p>
-
-        <form class="deleteForm" method="post" action="/delete" >
-            <input type="hidden" name="id" value="${pet.id}">
-            <button type="submit" class="btn btn-danger">
-                Delete
-            </button>
-        </form>
+                            <form class="deleteForm" method="post" action="/delete" >
+                                <input type="hidden" name="id" value="${pet.id}">
+                                <button type="submit" class="btn btn-danger">
+                                    Delete
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </c:forEach>
         </div>
-            </div>
-    </c:forEach>
     </div>
+
     <jsp:include page="/WEB-INF/partials/footer.jsp"/>
-            </div>
 </body>
 </html>

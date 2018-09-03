@@ -11,9 +11,6 @@ public class User implements Serializable {
     private String password;
     private String location;
 
-
-
-
     public User() {}
 
     public User(String username, String email, String password) {
@@ -49,8 +46,6 @@ public class User implements Serializable {
     public String getUsername() {
         return username;
     }
-
-
 
     public void setUsername(String username) {
         this.username = username;

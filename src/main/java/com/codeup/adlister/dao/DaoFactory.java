@@ -11,7 +11,6 @@ public class DaoFactory {
         }
         return usersDao;
     }
-
     public static Pets getPetsDao() {
         if (petsDao == null) {
             petsDao = new MySQLPetsDao(config);

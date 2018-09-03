@@ -14,7 +14,6 @@ import java.io.IOException;
 @WebServlet(name = "controllers.PetAdsServlet", urlPatterns = "/create")
 public class PetAdsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/login");
             return;
@@ -33,7 +32,6 @@ public class PetAdsServlet extends HttpServlet {
         String title = request.getParameter("title");
         String traits = request.getParameter("traits");
         User user = (User) request.getSession().getAttribute("user");
-
         // validate input
         boolean inputHasErrors = name.isEmpty()
                 || type.isEmpty()
@@ -44,20 +42,14 @@ public class PetAdsServlet extends HttpServlet {
                 || cost.isEmpty()
                 || title.isEmpty()
                 || traits.isEmpty();
-
         if (inputHasErrors) {
             response.sendRedirect("/create");
             return;
         }
-
         // create and save a new pets
-//        Pet pet = new Pet(name, type, breed, gender, Integer.parseInt(age));
-//        DaoFactory.getPetsDao().insert(pet);
-//        response.sendRedirect("/ads");
-//        Pet pet = (Pet) request.getSession().getAttribute("name");
         Pet pet = new Pet(name, type, breed, gender, age, description, cost, title, traits);
         pet.setUser_id(user.getId());
         DaoFactory.getPetsDao().insert(pet);
-        response.sendRedirect("/index");
+        response.sendRedirect("/profile");
     }
 }

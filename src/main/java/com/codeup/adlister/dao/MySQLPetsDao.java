@@ -23,7 +23,6 @@ public class MySQLPetsDao implements Pets {
         }
     }
 
-
     private List<Pet> all(ResultSet rs) throws SQLException {
         List<Pet> pets = new ArrayList<>();
         while (rs.next()) {
@@ -37,31 +36,22 @@ public class MySQLPetsDao implements Pets {
         return null;
     }
 
-//    @Override
-//    public List<Pets> all() {
-//        return null;
-//    }
-@Override
-public List<Pet> all() {
-    PreparedStatement stmt = null;
-    try {
-        stmt = connection.prepareStatement("SELECT * FROM pets");
-        ResultSet rs = stmt.executeQuery();
-        return createPetsFromResults(rs);
-    } catch (SQLException e) {
-        throw new RuntimeException("Error retrieving all ads.", e);
+    @Override
+    public List<Pet> all() {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM pets");
+            ResultSet rs = stmt.executeQuery();
+            return createPetsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
     }
-}
     @Override
     public Long insert(Pet pet) {
         String query = "INSERT INTO pets(name, type, breed, gender, age, description, cost, title, traits, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-//            System.out.println(pet.getName());
-//            System.out.println(pet.getType());
-//            System.out.println(pet.getBreed());
-//            System.out.println(pet.getGender());
-
             stmt.setString(1, pet.getName());
             stmt.setString(2, pet.getType());
             stmt.setString(3, pet.getBreed());
@@ -72,8 +62,6 @@ public List<Pet> all() {
             stmt.setString(8, pet.getTitle());
             stmt.setString(9, pet.getTraits());
             stmt.setLong(10, pet.getUser_id());
-
-
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -82,7 +70,6 @@ public List<Pet> all() {
             throw new RuntimeException("Error creating new pet", e);
         }
     }
-
     public Pet extractPet(ResultSet rs) throws SQLException {
         return new Pet(
                 rs.getLong("id"),
@@ -114,8 +101,6 @@ public List<Pet> all() {
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
-
-
     }
     @Override
     public void deleteAd(Long id) {
@@ -129,12 +114,6 @@ public List<Pet> all() {
         }
     }
 
-
-//    public static void main(String[] args) {
-//        Config config = new Config();
-//        MySQLPetsDao petsDao = new MySQLPetsDao(config);
-//        System.out.println();
-//    }
 }
 
 

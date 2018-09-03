@@ -1,13 +1,9 @@
 package com.codeup.adlister.dao;
 
-import com.codeup.adlister.models.Pet;
 import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
-import java.util.List;
-import java.util.ArrayList;
-
 
 public class MySQLUsersDao implements Users {
     private Connection connection;
@@ -26,7 +22,6 @@ public class MySQLUsersDao implements Users {
             throw new RuntimeException("Error connecting to the database!", e);
         }
     }
-
 
     @Override
     public User findByUsername(String username) {
@@ -68,7 +63,6 @@ public class MySQLUsersDao implements Users {
                 rs.getString("email"),
                 rs.getString("password"),
                 rs.getString("location")
-
         );
     }
 }
