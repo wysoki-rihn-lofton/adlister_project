@@ -9,20 +9,19 @@
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
-        <form class="form_size" action="/login" method="POST">
-        <h1 class="text-center">Please Log In</h1>
-            <div class="form-group">
-                <label for="username">Username</label>
+
+      <div class="row">
+          <div  class="col-lg-12">
+        <form id="login_form" action="/login" method="POST">
+        <h3>Login</h3>
                 <input id="username" name="username" class="form-control" type="text"/>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
                 <input id="password" name="password" class="form-control" type="password">
-            </div>
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
+            <a href="/">I am a new user</a>
         </form>
     </div>
-
+      </div>
+    </div>
     <jsp:include page="/WEB-INF/partials/footer.jsp"/>
 
 </body>

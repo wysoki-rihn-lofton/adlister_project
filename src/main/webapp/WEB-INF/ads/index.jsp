@@ -10,7 +10,7 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 <div class="container">
-    <h1 class="text-center">Here are all the ads!</h1>
+    <h1 class="text-center">Pet Listings</h1>
 
 <div class="row">
 

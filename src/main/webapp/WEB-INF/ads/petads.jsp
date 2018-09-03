@@ -39,6 +39,8 @@
                     <option value="fish">fish</option>
                     <option value="amphibian">amphibian</option>
                     <option value="reptile">reptile</option>
+                    <option value="other">other</option>
+
                 </select>
             `</div>
 
@@ -68,8 +70,10 @@
             <div class="col-lg-6">
                 <input placeholder="Adoption fee" id="cost" name="cost" class="form-control" type="number"required>
             </div>
-            <%--<input placeholder="traits" id="traits" name="traits" class="form-control" type="text"required>--%>
 
+            <div class="col-lg-12">
+            <input placeholder="Traits" id="traits" name="traits" class="form-control" type="text"required>
+            </div>
         <input type="submit" class="btn btn-primary btn-block">
             </div>
     </form>
