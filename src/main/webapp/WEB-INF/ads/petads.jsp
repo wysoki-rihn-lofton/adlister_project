@@ -42,7 +42,7 @@
                     <option value="other">other</option>
 
                 </select>
-            `</div>
+            </div>
 
             <div class="col-lg-6">
                 <select class="form-control" name="gender" id="gender" required>
@@ -74,8 +74,10 @@
             <div class="col-lg-12">
             <input placeholder="Traits" id="traits" name="traits" class="form-control" type="text"required>
             </div>
-        <input type="submit" class="btn btn-primary btn-block">
+            <div class="col-lg-12">
+            <button class="btn btn-primary form-control">Submit</button>
             </div>
+        </div>
     </form>
 </div>
 </div>
