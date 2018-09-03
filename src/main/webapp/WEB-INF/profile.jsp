@@ -5,34 +5,43 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Your Profile" />
     </jsp:include>
-    <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
     <div class="container">
-        <h1>Welcome, ${sessionScope.user.username}!</h1>
-    </div>
+        <h1 class="text-center">Welcome, ${sessionScope.user.username}!</h1>
+        <div class="row">
     <c:forEach var="pet" items="${pets}">
+
+            <div class="col-lg-6 col-sm-12">
+
+
         <div class="card">
-            <div class="card-header"><h3>${pet.title}</h3></div>
-            <div><p>Description: ${pet.description}</p></div>
-            <div><p>Pet's name: ${pet.name}</p></div>
-            <div><p>Cost: $${pet.cost}</p></div>
-            <div><p>Pet's gender: ${pet.gender}</p></div>
-            <div><p>Pet's age: ${pet.age}</p></div>
-            <div><p>Pet's traits: ${pet.traits}</p></div>
-            <div><p>Type of animal: ${pet.type}</p></div>
-        </div>
-        <form method="post" action="/delete" >
+            <div class="card-body">
+                <div class="card-header"><h3><strong>${pet.title}</strong></h3>
+            <p class="card-text">Description: ${pet.description}</p>
+            <p class="card-text">Name: ${pet.name}</p>
+            <p class="card-text">Cost: $${pet.cost}</p>
+            <p class="card-text">Gender: ${pet.gender}</p>
+            <p class="card-text">Age: ${pet.age}</p>
+            <p class="card-text">Traits: ${pet.traits}</p>
+            <p class="card-text">Type: ${pet.type}</p>
+
+        <form class="deleteForm" method="post" action="/delete" >
             <input type="hidden" name="id" value="${pet.id}">
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-danger">
                 Delete
             </button>
         </form>
+                </div>
+            </div>
+        </div>
+            </div>
     </c:forEach>
+    </div>
     <jsp:include page="/WEB-INF/partials/footer.jsp"/>
-
+            </div>
 </body>
 </html>

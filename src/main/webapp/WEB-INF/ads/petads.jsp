@@ -5,55 +5,85 @@
         <jsp:param name="title" value="Place A Ad" />
     </jsp:include>
 
-    <link rel="stylesheet" href="../../style.css">
-
 </head>
 
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<div class="form-container container">
-    <h1>Please fill in your Ad.</h1>
-    <form action="/create" method="post">
-        <div class="form-group">
-            <label for="title">Title Of Ad</label>
-            <input id="title" name="title" class="form-control" type="text"required>
-        </div>
-        <div class="form-group">
-            <label for="name">Name Of Pet</label>
-            <input id="name" name="name" class="form-control" type="text"required>
-        </div>
-        <div class="form-group">
-            <label for="type">Type of Pet</label>
-            <input  id="type" name="type" class="form-control" type="text"required>
-        </div>
-        <div class="form-group">
-            <label for="breed">Breed Of Pet</label>
-            <input id="breed" name="breed" class="form-control" type="text"required>
-        </div>
-        <div class="form-group">
-            <label for="gender">Gender Of Pet</label>
-            <input id="gender" name="gender" class="form-control" type="text"required>
-        </div>
-        <div class="form-group">
-            <label for="age">Age Of Pet</label>
-            <input id="age" name="age" class="form-control" type="number"required>
-        </div>
-        <div class="form-group">
-        <label for="description">Description Of Pet</label>
-        <input id="description" name="description" class="form-control" type="text"required>
-        </div>
-        <div class="form-group">
-            <label for="cost">Cost Of Pet</label>
-            <input id="cost" name="cost" class="form-control" type="number"required>
-        </div>
-        <div class="form-group">
-            <label for="traits">Traits Of Pet</label>
-            <input id="traits" name="traits" class="form-control" type="text"required>
-        </div>
-        <input type="submit" class="btn btn-primary btn-block">
-    </form>
 
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
+
+
+
+
+<%--<div class="form-container container">--%>
+
+
+    <form class="form_size" action="/create" method="post">
+    <h1 class="text-center">New Listing</h1>
+
+        <div class="form-row">
+
+            <div class="col-lg-6">
+                <input placeholder="Title" id="title" name="title" class="form-control" type="text"required>
+            </div>
+
+            <div class="col-lg-6">
+                <input placeholder="Name" id="name" name="name" class="form-control" type="text"required>
+            </div>
+
+            <div class="col-lg-6">
+                <select class="form-control" name="type" id="type" required>
+                    <option disabled selected value> Type </option>
+                    <option value="dog">dog</option>
+                    <option value="cat">cat</option>
+                    <option value="bird">bird</option>
+                    <option value="fish">fish</option>
+                    <option value="amphibian">amphibian</option>
+                    <option value="reptile">reptile</option>
+                    <option value="other">other</option>
+
+                </select>
+            </div>
+
+            <div class="col-lg-6">
+                <select class="form-control" name="gender" id="gender" required>
+                    <option disabled selected value>Gender</option>
+                    <option value="female">female</option>
+                    <option value="male">male</option>
+                </select>
+            </div>
+
+            <div class="col-lg-6">
+                <input placeholder="Breed" id="breed" name="breed" class="form-control" type="text"required>
+            </div>
+
+
+
+
+            <div class="col-lg-6">
+                <input placeholder="Age" id="age" name="age" class="form-control" type="number"required>
+            </div>
+
+            <div class="col-lg-6">
+                <input placeholder="Description" id="description" name="description" class="form-control" type="text"required>
+            </div>
+
+            <div class="col-lg-6">
+                <input placeholder="Adoption fee" id="cost" name="cost" class="form-control" type="number"required>
+            </div>
+
+            <div class="col-lg-12">
+            <input placeholder="Traits" id="traits" name="traits" class="form-control" type="text"required>
+            </div>
+            <div class="col-lg-12">
+            <button class="btn btn-primary form-control">Submit</button>
+            </div>
+        </div>
+    </form>
 </div>
+</div>
+</div>
+
+
 <jsp:include page="/WEB-INF/partials/footer.jsp"/>
 
 </body>
