@@ -8,37 +8,25 @@
 
 </head>
 <body>
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div class="container">
-        <h1 align="center">Welcome to the PetLister!</h1>
+    <%--<jsp:include page="/WEB-INF/partials/navbar.jsp" />--%>
+<div class="container"></div>
+   <div class="jumbotron">
+        <h1 id="index_header">Welcome to PetLister!</h1>
+
+       <a href="/index">  <button class="btn btn-lg btn-danger homepage-button">Find a pet</button> </a>
+
+
+
+
+       <a href="/create">  <button class="btn btn-lg btn-primary homepage-button">List a pet</button> </a>
+
+
+        <video playsinline autoplay muted loop poster="polina.jpg" id="bgvid">
+
+            <source src="https://staging.coverr.co/s3/mp4/Puppy.mp4" type="video/mp4">
+        </video>
     </div>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="..." alt="blue macaw">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Second slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Third slide">
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
 
 
 

@@ -8,22 +8,31 @@
 </head>
 
 <body>
+
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<div class="form-container container">
-    <h1>Please fill in your Ad.</h1>
-    <form action="/create" method="post">
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input id="title" name="title" class="form-control" type="text"required>
-        </div>
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input id="name" name="name" class="form-control" type="text"required>
-        </div>
-        <div class="form-group">
-            <label for="type">Type</label>
+
+
+
+
+<%--<div class="form-container container">--%>
+
+
+    <form class="form_size" action="/create" method="post">
+    <h1 class="text-center">New Listing</h1>
+
+        <div class="form-row">
+
+            <div class="col-lg-6">
+                <input placeholder="Title" id="title" name="title" class="form-control" type="text"required>
+            </div>
+
+            <div class="col-lg-6">
+                <input placeholder="Name" id="name" name="name" class="form-control" type="text"required>
+            </div>
+
+            <div class="col-lg-6">
                 <select class="form-control" name="type" id="type" required>
-                    <option disabled selected value> select </option>
+                    <option disabled selected value> Type </option>
                     <option value="dog">dog</option>
                     <option value="cat">cat</option>
                     <option value="bird">bird</option>
@@ -31,38 +40,44 @@
                     <option value="amphibian">amphibian</option>
                     <option value="reptile">reptile</option>
                 </select>
-        </div>
-        <div class="form-group">
-            <label for="breed">Breed</label>
-            <input id="breed" name="breed" class="form-control" type="text"required>
-        </div>
-        <div class="form-group">
-            <label for="gender">Gender</label>
-            <select class="form-control" name="gender" id="gender" required>
-                <option value="female">female</option>
-                <option value="male">male</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="age">Age</label>
-            <input id="age" name="age" class="form-control" type="number"required>
-        </div>
-        <div class="form-group">
-        <label for="description">Description</label>
-        <input id="description" name="description" class="form-control" type="text"required>
-        </div>
-        <div class="form-group">
-            <label for="cost">Price</label>
-            <input id="cost" name="cost" class="form-control" type="number"required>
-        </div>
-        <div class="form-group">
-            <label for="traits">Traits</label>
-            <input id="traits" name="traits" class="form-control" type="text"required>
-        </div>
-        <input type="submit" class="btn btn-primary btn-block">
-    </form>
+            `</div>
 
+            <div class="col-lg-6">
+                <select class="form-control" name="gender" id="gender" required>
+                    <option disabled selected value>Gender</option>
+                    <option value="female">female</option>
+                    <option value="male">male</option>
+                </select>
+            </div>
+
+            <div class="col-lg-6">
+                <input placeholder="Breed" id="breed" name="breed" class="form-control" type="text"required>
+            </div>
+
+
+
+
+            <div class="col-lg-6">
+                <input placeholder="Age" id="age" name="age" class="form-control" type="number"required>
+            </div>
+
+            <div class="col-lg-6">
+                <input placeholder="Description" id="description" name="description" class="form-control" type="text"required>
+            </div>
+
+            <div class="col-lg-6">
+                <input placeholder="Adoption fee" id="cost" name="cost" class="form-control" type="number"required>
+            </div>
+            <%--<input placeholder="traits" id="traits" name="traits" class="form-control" type="text"required>--%>
+
+        <input type="submit" class="btn btn-primary btn-block">
+            </div>
+    </form>
 </div>
+</div>
+</div>
+
+
 <jsp:include page="/WEB-INF/partials/footer.jsp"/>
 
 </body>

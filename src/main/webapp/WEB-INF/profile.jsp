@@ -20,7 +20,7 @@
 
         <div class="card">
             <div class="card-body">
-                <div class="card-header"><h3>${pet.title}</h3>
+                <div class="card-header"><h3><strong>${pet.title}</strong></h3>
             <p class="card-text">Description: ${pet.description}</p>
             <p class="card-text">Name: ${pet.name}</p>
             <p class="card-text">Cost: $${pet.cost}</p>
@@ -29,9 +29,9 @@
             <p class="card-text">Traits: ${pet.traits}</p>
             <p class="card-text">Type: ${pet.type}</p>
 
-        <form method="post" action="/delete" >
+        <form class="deleteForm" method="post" action="/delete" >
             <input type="hidden" name="id" value="${pet.id}">
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-danger">
                 Delete
             </button>
         </form>

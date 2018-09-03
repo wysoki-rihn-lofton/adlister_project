@@ -18,7 +18,7 @@
         <div class="col-lg-6 col-sm-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="card-header"><h3>${pet.title}</h3>
+                    <div class="card-header"><h3><strong>${pet.title}</strong></h3>
                         <p class="card-text">Description: ${pet.description}</p>
                         <p class="card-text">Name: ${pet.name}</p>
                         <p class="card-text">Cost: $${pet.cost}</p>

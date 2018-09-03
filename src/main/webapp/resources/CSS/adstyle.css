@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+  background-image: url("https://images.unsplash.com/photo-1497993950456-cdb57afd1cf1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9bb58b79f10b56c76ca797255880344e&auto=format&fit=crop&w=800&q=80");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: Montserrat;
+
+ }
+ .form_size {
+     width: 50%;
+     margin: 0 auto;
+ }
+
+ .deleteForm{
+     background: transparent;
+ }
+
+input{
+    margin-bottom:3%;
+}
+ form{
+     background: rgba(255, 255, 255, .5);
+ }
+
+h1 {
+
+    font-family: Montserrat;
+    font-weight: lighter;
+    font-size: 4em;
+
+}
+
+ .jumbotron{
+     height: 100vh;
+     background-color: rgba(255, 255, 255, .1);
+     margin-bottom: 0;
+ }
+
+ video#bgvid {
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     min-width: 100%;
+     min-height: 100%;
+     width: auto;
+     height: auto;
+     z-index: -100;
+     -ms-transform: translateX(-50%) translateY(-50%);
+     -moz-transform: translateX(-50%) translateY(-50%);
+     -webkit-transform: translateX(-50%) translateY(-50%);
+     transform: translateX(-50%) translateY(-50%);
+     background-size: cover;
+ }
+ #index_header {
+     font-size: 700%;
+     width: 50%;
+     font-family: Montserrat;
+ }
+ .homepage-button {
+     font-size: 3em;
+     font-family: Montserrat;
+     border-radius: 100%;
+     padding: 2.5%;
+ }
+
+ .card {
+     background-color: rgba(255, 255, 255, .8);
+
+ }
+
+ .card-body{
+     border: none;
+     margin: 0;
+     padding: 0;
+ }

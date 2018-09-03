@@ -13,7 +13,7 @@
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="/index">View Ads</a>
+                <a class="nav-link" href="/index">View Pets</a>
             </li>
 
 <%--This logic shows the view profile button navbar only if user is logged in            --%>
@@ -25,7 +25,7 @@
 
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="/create">Create Ad</a>
+                    <a class="nav-link" href="/create">List-a-Pet</a>
                 </li>
 
                 <li class="nav-item active">
