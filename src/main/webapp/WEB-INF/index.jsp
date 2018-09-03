@@ -22,22 +22,22 @@
 
 
 
-<c:if test="${sessionScope.user == null}">
-        <div id="landing_form" class="col-lg-6" >
-            <form class="form_size" action="/register" method="post">
-                    <input placeholder="username" id="username" name="username" class="form-control" type="text">
-                    <input placeholder="email" id="email" name="email" class="form-control" type="text">
-                    <input placeholder="password" id="password" name="password" class="form-control" type="password">
-                    <input placeholder="confirm password" id="confirm_password" name="confirm_password"                                        class="form-control" type="password">
-                    <input placeholder="location" id="location" name="location" class="form-control" type="text">
+<%--<c:if test="${sessionScope.user == null}">--%>
+        <%--<div id="landing_form" class="col-lg-6" >--%>
+            <%--<form class="form_size" action="/register" method="post">--%>
+                    <%--<input placeholder="username" id="username" name="username" class="form-control" type="text">--%>
+                    <%--<input placeholder="email" id="email" name="email" class="form-control" type="text">--%>
+                    <%--<input placeholder="password" id="password" name="password" class="form-control" type="password">--%>
+                    <%--<input placeholder="confirm password" id="confirm_password" name="confirm_password"                                        class="form-control" type="password">--%>
+                    <%--<input placeholder="location" id="location" name="location" class="form-control" type="text">--%>
 
-                <button type="submit" class="btn btn-success btn-block">Register</button>
+                <%--<button type="submit" class="btn btn-success btn-block">Register</button>--%>
 
 
 
-                    <a href="/login">I already have an account</a>
-            </form>
-            </c:if>
+                    <%--<a href="/login">I already have an account</a>--%>
+            <%--</form>--%>
+            <%--</c:if>--%>
 
 
 
