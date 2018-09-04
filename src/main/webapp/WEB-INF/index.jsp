@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-lg-4">
             <h1>Welcome to PetLister</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deleniti eaque eveniet ex excepturi                     facere impedit, in, itaque iure maxime minima modi officiis porro qui quis ratione recusandae                       repellat unde!
+                <p> PetLister is a trusted service for connecting pet lovers with responsible breeders and owners nationwide. Enter here to browse one of the widest, most varied sources for listing and adopting new pets.
                 </p>
         </div>
 
